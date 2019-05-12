@@ -3,3 +3,5 @@
 ################################################################################
 
 /.vs/FluentValidationSample
+/FluentValidationSample/bin/Debug/netcoreapp2.2
+/FluentValidationSample/obj
