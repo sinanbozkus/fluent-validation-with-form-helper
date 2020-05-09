@@ -1,0 +1,44 @@
+﻿@model List<Student>
+
+<div>
+    <a href="/home/form" class="btn btn-primary mb-3">Add Student</a>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <td>Student Name</td>
+            <td>E-mail</td>
+            <td>Student Number</td>
+            <td>Credit</td>
+            <td>Graduation Status</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.StudentName</td>
+                    <td>@student.Email</td>
+                    <td>@student.StudentNumber</td>
+                    <td>@student.Credit</td>
+                    <td>@(student.Graduated ? "Evet" : "Hayır")</td>
+                    <td>
+                        <a class="btn btn-primary" href="/home/form/@student.Id">Edit</a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="6" class="text-center">
+                    There is no record.
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
